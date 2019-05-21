@@ -1,10 +1,11 @@
 <body>
 	<title>Jamie Clark</title>
 	<style>
-		.mainRunner { position: relative; }
+		.mainRunner { position: relative; text-align: center; color: white; }
 		.img1 { position: relative; z-index: 2; }
 		.img2 { position: relative; z-index: 1; top: -60px; left: -80px:}
 		.img3 { position: relative; z-index: 3; top: -60px; right; -80px; }
+		.centered { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
 		
 		
 		.circular-image { border-radius: 50%; }
@@ -15,7 +16,7 @@
 		
 <!-- Selfies -->
 
-<div  class="mainRunner" style="padding:50px; background-color: #365271;">
+<div class="mainRunner" style="padding:50px; background-color: #365271;">
   <center>
     <img class="img1" src="IMG_2893.JPG" alt="selfie" width="249.9375" height="375" hspace="30">
     <img class="img2" src="IMG_2895.jpg" alt="selfie" width="249.9375" height="375" hspace="30">
@@ -25,7 +26,7 @@
 	
 <!-- Name header -->
 	
-  <h1 id="top" style="color: white; font-family: cursive; font-size:86pt; font-style:italic">  <center> 
+  <h1 class="centered" id="top" style="color: white; font-family: cursive; font-size:86pt; font-style:italic">  <center> 
   Jamie Clark 
 	  </center> </h1> 
 	
