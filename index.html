@@ -12,6 +12,17 @@
 		.image-overlay { position: relative; width: 100%; } 
 		.image-overlay .text { position: absolute; top: 100px; left: 50px; width: 50%; }
 		
+		* { box-sizing: border-box; }
+		input[type=text], select, textarea { width: 100%; padding: 12px; border: 1px solid #ccc; margin-top:6px;
+			margin-bottom: 16px; resize: vertical; }
+		input[type=submit] { background-color: #4CAF50; color: white; padding: 12px 20px; border: none; 
+			cursor: pointer; }
+		input[type=submit]:hoover { background-color: #45a049; }
+		.container { border-radius: 5px; background-color: #f2f2f2; padding: 10px; }
+		.column { float: left; width: 50%; margin-top: 6px; padding: 20px; }
+		.row:after { content: ""; display: table; clear: both; }
+		@media screen and (max-width: 600px) { .column, input[type=submit] { width: 100%; margin-top: 0; } }
+		
 		
 	</style>
 	
@@ -69,14 +80,55 @@
 	
 
 	</div>
+
+				<!-- Say Hello! --> <!--  color block #3  -->
+
+<div  style="padding: 50px; background-color:#FFFFFF;"> 	  
+
+<div class="container">	
+	<div  style="text-align: center">
+		<h2 id="sayhello"> <center> <strong> SAY HELLO! </strong> <center> </h2>
+		<p> Let's connect. Let me know you stopped by. </p>
+	</div>
 	
+	<div class="row">
+		<div class="column">
+			<img src=" " style="width:100%">
+		</div>
+		<div class="column">
+			<form action="/action_page.php">
+				<label for="fname">First Name</label>
+				<input type="text" id="fname" name="firstname" placeholder="Your name..">
+				<label for="lname">Last Name</label>
+				<input type="text" id="lname" name="lastname" placeholder="Your last name..">
+				<label for="jobtitle">Job Title</label>
+				<select id="jobtitle" name="jobtitle">
+					<option value="educator">Educator</option>
+					<option value="employer">Employer</option>
+					<option value="student">Student</option>
+					<option value="other">Other</option>
+				</select>
+				<label for="message">Message</label>
+				<textarea id="message" name="message" placeholder="Write something.." style="height:170px">
+				</textarea>
+				
+				<input type="submit" value="Submit">
+			</form>
+		</div>
+	</div>
+					
 	
-				<!-- Skills & Tools Section --> <!--  color block #3  -->
+</div>
+	
+</div>	
+	
+				<!-- Skills & Tools Section --> <!--  color block #4  -->
 	  
 	
-<div  style="padding: 50px; background-color:#FFFFFF;">
+<div  style="padding: 50px; background-color:#F7EFEC;">
 <h2 id="skillstools"> <center> <strong> SKILLS & TOOLS </strong> <center> </h2>
 	</div>
+	
 	
 	
 	
@@ -84,10 +136,17 @@
 					<!-- Experience --> <!--  color block #4  -->
 	
 	
-<div  style="padding: 50px; background-color:#F7EFEC;">
+<div  style="padding: 50px; background-color:#FFFFFF;">
 <h2 id="experience"> <center> <strong> EXPERIENCE  </strong> <center> </h2>
 	</div>
 	
+					<!-- Interests --> <!--  color block #6  -->
+	
+<div  style="padding: 50px; background-color:#E2DFDD;">
+<h2 id="interests"> <center> <strong> INTERESTS  </strong> <center> </h2>
+		
+	</div>
+	 
 
 
 					<!-- Projects --> <!--  color block #5  -->
@@ -110,17 +169,11 @@
 	</div>
 
 	
-					<!-- Interests --> <!--  color block #6  -->
-	
-<div  style="padding: 50px; background-color:#E2DFDD;">
-<h2 id="interests"> <center> <strong> INTERESTS  </strong> <center> </h2>
-		
-	</div>
-	 
+
 			<!-- Reviews (Letters of Recommendation) --> <!--  color block #7  -->
 	
 	
-	<div  style="padding: 50px; background-color:#FFFFFF;">
+	<div  style="padding: 50px; background-color:#F7EFEC;">
 
 
 <h2 id="reviews"> <center> <strong> REVIEWS  </strong> <center> </h2>
