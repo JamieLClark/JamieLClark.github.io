@@ -12,16 +12,67 @@
 		.image-overlay { position: relative; width: 100%; } 
 		.image-overlay .text { position: absolute; top: 100px; left: 50px; width: 50%; }
 		
+			/* say hello form */
+		
 		* { box-sizing: border-box; }
 		input[type=text], select, textarea { width: 100%; padding: 12px; border: 1px solid #ccc; margin-top:6px;
 			margin-bottom: 16px; resize: vertical; }
 		input[type=submit] { background-color: #E6E6E6; color: white; padding: 12px 20px; border: none; 
 			cursor: pointer; }
-		input[type=submit]:hoover { background-color: #FFFFFF; }
+		input[type=submit]:hover { background-color: #FFFFFF; }
 		.container { border-radius: 5px; background-color: #FFFFFF; padding: 10px; }
 		.column { float: left; width: 50%; margin-top: 6px; padding: 20px; }
 		.row:after { content: ""; display: table; clear: both; }
 		@media screen and (max-width: 600px) { .column, input[type=submit] { width: 100%; margin-top: 0; } }
+		
+			/* skills & tools percentage circles */
+		
+		@import "compass";
+		@import 
+		url('https://fonts.googleapis.com/cssfamily=Titillium+Web:200,200i,300,300i,400,400i,600,600i,700,700i,900');
+		
+		body { font-family: "Titillium Web", sans-serif; margin: 0 auto; }
+		$circle-width: 0.09em;
+		$circle-width-hover: 0.07em;
+		
+		$primary-color: #000000;
+		$secondary-color: #dfe8ed;
+		$bg-color: #ffffff;
+		
+		$primary-color-tan: #E2DFDD;
+		
+		.rect-auto { clip: rect(auto, auto, auto, auto); }
+		.pie { position: absolute; border: $circle-width solid $primary-color; width: 1 - (2 * $circle-width);
+			height: 1 - (2 * $circle-width); clip: rect(0em, 0.5em, 1em, 0em); border-raidus: 50%;
+			@include rotate(0deg); }
+		.pie-fill { @include rotate(180deg); }
+		.wrapper { width: 1200px; margin: 0 auto; }
+		.c100 { *, *:before, *:after { @include box-sizing(content-box); } position: relative; font-size: 120px;
+			width: 1em; height: 1em; border-radius: 50%; float: left; margin: 0.4eml 
+			background-color: $secondary-color; 
+			> span { position: absolute; width: 100%; z-index: 1; left: 0; top: 0; width: 5em; 
+				line-height: 5em; font-size: 0.2em; color: $primary-color-span; display: block;
+				text-align: center; white-space: nowrap; @include transistion-property(all);
+				@include transition-duration(0.2s); @include transition-timing-function(ease-out); }
+		&:after{ position: absolute; top: $circle-width; left: $circle-width; display: block; content: " ";
+			border-radius: 50%; background-color: $bg-color; width: 1 - (2 * $circle-width); 
+			height: 1 - (2 * $circle-width); @include transition-property(all); 
+			@include transition-duration(0.2s); @include transition-timing-function(ease-in); }
+		.slice { position: absolute; width: 1em; height: 1em; clip: rect(0em, 1em, 1em, 0.5em); }
+		.bar { @extend .pie; }
+		
+			@for $j from 51 through 100 { &.p#{$j} .slice { @extend .rect-auto; } &.p#{$j} .bar:after { 
+				@extend .pie-fill; } &.p#{$j} .fill{ @extend .pie; @extend .pie-fill; } }
+			@for $j from 1 through 100 { &.p#{$j} .bar{ @include rotate((360/100*$j) + deg); } }
+			
+			&:hover{ cursor: default; > span { width: 3.33em; line-height: 3.33em; font-size; 0.3em; 
+				color: $primary-color-span; } &:after{ top: $circle-width-hover; 
+				left: $circle-width-hover; width: 1 - (2 * $circle-width-hover); 
+				height: 1 - (2 * $circle-width-hover); } }
+			&.tan { .bar, .fill { border-color: $primary-color-tan !important;} &:hover { > span 
+				{ color: $primary-color-span; } } }
+		}
+		}
 		
 		
 	</style>
@@ -92,7 +143,7 @@
 	
 	<div class="row">
 		<div class="column">
-			<form action="/action_page.php">
+			<form action="https://mail.google.com/mail/u/0/#inbox">
 				<label for="fname">First Name</label>
 				<input type="text" id="fname" name="firstname" placeholder="Your name..">
 				<label for="lname">Last Name</label>
@@ -125,8 +176,33 @@
 	  
 	
 <div  style="padding: 50px; background-color:#F7EFEC;">
-<h2 id="skillstools"> <center> <strong> SKILLS & TOOLS </strong> <center> </h2>
-	</div>
+	<h2 id="skillstools"> <center> <strong> SKILLS & TOOLS </strong> <center> </h2>
+		<div class="wrapper">
+			<div class="c100 p80 tan">
+				<span>Python</span>
+				<div class="slice">
+					<div class="bar"></div>
+					<div class="fill"></div>
+				</div>
+			</div>
+			<div class="c100 p30 tan">
+				<span>Java</span>
+				<div class="slice">
+					<div class="bar"></div>
+					<div class="fill"></div>
+				</div>
+			</div>
+			<div class="c100 p10 tan">
+				<span>c/C++</span>
+				<div class="slice">
+					<div class="bar"></div>
+					<div class="fill"></div>
+				</div>
+			</div>
+		,
+		</div>
+
+</div>
 	
 	
 	
